@@ -325,7 +325,7 @@ function HandleTask(e)
           { 
                     
            uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
-            let str= uu.autofarm +'$'+ uu.TaskCoins +'$'+ uu.refId +'$'+ uu.Ref +'$'+ uu.ask1 +'$'+ uu.rwd +'$'+ uu.yts +'$'+ uu.signUpdt +'$'+ uu.activedt +'$'+ uu.lastLogindt;
+            let str= uu.autofarm +'$'+ uu.TaskCoins +'$'+ uu.refId +'$'+ uu.Ref +'$'+ uu.ask1 +'$'+ uu.rwd +'$'+ uu.yts +'$'+ uu.signUpdt.toISOString()+'$'+ uu.activedt.toISOString() +'$'+ uu.lastLogindt.toISOString();
 
             //let str= JSON.stringify(uu);
          savedebug();
@@ -377,7 +377,7 @@ var weekdt = new Date("14/March/2025 20:30:00");
 var now = new Date();
           
  if(weekdt.getTime()>now.getTime() || now.getTime()- weekdt.getTime()> 2580000000){ showAlert("Your phone date is not correct. Set it and try again. The app will close automatically."); close(); return;}
-  if(now.getTime() - (new Date(uu.lastLogindt).getTime()) > 2752000000 ) { uu.autofarm=0; uu.activedt=now.toString(); showAlert("It has been more than 30 days since your last login and because of this your bot coin has reset to zero. To avoid similar situation, try to login at least once every 30 days." )} 
+  if(now.getTime() - (new Date(uu.lastLogindt).getTime()) > 2752000000 ) { uu.autofarm=0; uu.activedt=now.toISOString(); showAlert("It has been more than 30 days since your last login and because of this your bot coin has reset to zero. To avoid similar situation, try to login at least once every 30 days." )} 
  uu.lastLogindt=now.toString();
        
   /*save("uu.lastLogindt",now.toString()); */
