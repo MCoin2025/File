@@ -325,8 +325,8 @@ function HandleTask(e)
            uu.rwd= fname;uu.ask1=ObsString(); let str= JSON.stringify(uu);
          savedebug();
             let st="http://mc2025.mc/?action="+  enco("ytvidd_"+ str);// +"#Intent;scheme=mc;package=com.mcgames.mcapp;end";
-            
-            link2open=st;
+           link2open= st.replace(/undefined/g," ");
+           // link2open=st;
           }   
           else
           { 
