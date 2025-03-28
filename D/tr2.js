@@ -288,7 +288,7 @@ function HandleTask(e)
                     
        // u[0].rwd= 'Sani'; let str=  JSON.stringify(u[0]);
            uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
-            let str= uu.autofarm +'$'+ uu.TaskCoins +'$'+ uu.refId +'$'+ uu.Ref +'$'+ uu.ask1 +'$'+ uu.rwd +'$'+ uu.yts +'$'+ new Date(uu.signUpdt).toISOString()+'$'+ new Date(uu.activedt).toISOString() +'$'+ new Date(uu.lastLogindt).toISOString();
+            let str= uu.autofarm +'$'+ uu.TaskCoins +'$'+ uu.refId +'$'+ uu.Ref +'$'+ uu.ask1 +'$'+ uu.rwd +'$'+ uu.yts +'$'+ new Date(uu.signUpdt).toLocaleDateString()+'$'+ new Date(uu.activedt).toLocaleDateString() +'$'+ new Date(uu.lastLogindt).toLocaleDateString();
 
             //let str= JSON.stringify(uu);
          savedebug();
@@ -325,7 +325,7 @@ function HandleTask(e)
           { 
                     
            uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
-            let str= uu.autofarm +'$'+ uu.TaskCoins +'$'+ uu.refId +'$'+ uu.Ref +'$'+ uu.ask1 +'$'+ uu.rwd +'$'+ uu.yts +'$'+ new Date(uu.signUpdt).toISOString()+'$'+ new Date(uu.activedt).toISOString() +'$'+ new Date(uu.lastLogindt).toISOString();
+            let str= uu.autofarm +'$'+ uu.TaskCoins +'$'+ uu.refId +'$'+ uu.Ref +'$'+ uu.ask1 +'$'+ uu.rwd +'$'+ uu.yts +'$'+ new Date(uu.signUpdt).toLocaleDateString()+'$'+ new Date(uu.activedt).toLocaleDateString() +'$'+ new Date(uu.lastLogindt).toLocaleDateString();
 
             //let str= JSON.stringify(uu);
          savedebug();
