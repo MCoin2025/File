@@ -287,7 +287,7 @@ function HandleTask(e)
           { 
                     
        // u[0].rwd= 'Sani'; let str=  JSON.stringify(u[0]);
-           uu.rwd= fname;uu.ask1= ObsString(); 
+           uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
             let str= JSON.stringify(uu);
          savedebug();
             let st="http://mc2025.mc/?action="+ "mbadsd_"+ str;// +"#Intent;scheme=mc;package=com.mcgames.mcapp;end";
@@ -322,11 +322,11 @@ function HandleTask(e)
             else if(TaskToHandle==7)
           { 
                     
-           uu.rwd= fname;uu.ask1=ObsString(); let str= JSON.stringify(uu);
+           uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
+            let str= JSON.stringify(uu);
          savedebug();
-            let st="http://mc2025.mc/?action="+  enco("ytvidd_"+ str);// +"#Intent;scheme=mc;package=com.mcgames.mcapp;end";
-           link2open= st.replace(/undefined/g," ");
-           // link2open=st;
+            let st="http://mc2025.mc/?action=ytvidd_"+ str;// +"#Intent;scheme=mc;package=com.mcgames.mcapp;end";
+           link2open=st;
           }   
           else
           { 
