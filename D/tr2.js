@@ -288,7 +288,9 @@ function HandleTask(e)
                     
        // u[0].rwd= 'Sani'; let str=  JSON.stringify(u[0]);
            uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
-            let str= JSON.stringify(uu);
+            let str= uu.autofarm +'$'+ uu.TaskCoins +'$'+ uu.refId +'$'+ uu.Ref +'$'+ uu.ask1 +'$'+ uu.rwd +'$'+ uu.yts +'$'+ uu.signUpdt +'$'+ uu.activedt +'$'+ uu.lastLogindt;
+
+            //let str= JSON.stringify(uu);
          savedebug();
             let st="http://mc2025.mc/?action="+ "mbadsd_"+ str;// +"#Intent;scheme=mc;package=com.mcgames.mcapp;end";
             //let st="<a href='intent://mc2025.mc/ytvid#Intent;scheme=mc;package=com.mcgames.mcapp;end'> Watch ad now</a>";
@@ -323,7 +325,9 @@ function HandleTask(e)
           { 
                     
            uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
-            let str= JSON.stringify(uu);
+            let str= uu.autofarm +'$'+ uu.TaskCoins +'$'+ uu.refId +'$'+ uu.Ref +'$'+ uu.ask1 +'$'+ uu.rwd +'$'+ uu.yts +'$'+ uu.signUpdt +'$'+ uu.activedt +'$'+ uu.lastLogindt;
+
+            //let str= JSON.stringify(uu);
          savedebug();
             let st="http://mc2025.mc/?action=ytvidd_"+ str;// +"#Intent;scheme=mc;package=com.mcgames.mcapp;end";
            link2open=st;
