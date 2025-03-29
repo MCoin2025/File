@@ -144,18 +144,16 @@ function shareMovie(e)
  let param= "https://t.me/share/url?url="+uu.refId+ "_"+fl+"_"+ movIndex+"_"+Index+"&text=You've got to watch or download this amazing movie ( "+tit+" ) and start earning MCoins today.";
   
   Telegram.WebApp.openTelegramLink(param);
-  if(uu.autofarm.length<5)
-  { uu.TaskCoins += 500000; savedebug();
+  if(uu.vidshare.length < 5)
+  {   
+    uu.vidshare=new Date().toString();
+    uu.TaskCoins += 500000; savedebug();
   }
-  else{
-  let prev=new Date(uu.autofarm);
-  let now=new Date();
-  if(prev.getDay() !=6)
-  {
-    if(now.getDay() > prev.getDay() ){ uu.TaskCoins += 500000; savedebug();}
+  else if(new Date(uu.vidshare).getTime()- new Date().getTime() >86000000)
+  { uu.vidshare=new Date().toString();
+    uu.TaskCoins += 500000; savedebug();
   }
-   else  if(now.getDay() < prev.getDay() ){ uu.TaskCoins += 500000; savedebug();}
-  }             
+            
 }
 
 function showmovie(e)
@@ -192,9 +190,7 @@ function ShowAd(e)
      TaskToHandle= 2;TaskId="";
     msg="Watch ads to get 100,000 coins per ad view. If you don't have our MC app installed already, you will have to download and install it first which will give you access to download our game and earn 2,000,000 coins for first time installation of the game after you watch your first ad.";
   document.getElementById('bt1').innerHTML ='Watch ads to earn MCoins';
-    document.getElementById('bt2').innerHTML ='Download MC app';          
-    
-      
+    document.getElementById('bt2').innerHTML ='Download MC app';
   document.getElementById('pop').innerHTML =msg;
   ppp.style.height= '90%';     
   ppp.style.display= "flex";       
@@ -398,7 +394,7 @@ let m = d.getMinutes() * 60;
 
 const nameOf = async(v) =>(v).toString().replace(/[ |\(\)=>]/g,'').substring(5);
   var u=[];// [u1,u2,u3,u4,u5,u6];
-  function user(autofarm,TaskCoins ,refId,Ref,ask1,rwd,yts,signUpdt,activedt,lastLogindt)
+  function user(autofarm,TaskCoins ,refId,Ref,ask1,rwd,yts,signUpdt,activedt,lastLogindt,install,vidshare)
   { 
     this.autofarm=autofarm;
     this.TaskCoins=TaskCoins;
@@ -410,7 +406,9 @@ const nameOf = async(v) =>(v).toString().replace(/[ |\(\)=>]/g,'').substring(5);
     this.signUpdt=signUpdt;
     this.activedt=activedt;
     this.lastLogindt= lastLogindt;  
-                         
+     this.install = install;  
+     this.vidshare = vidshare;  
+                                                       
                                
   }
   async function  savedebug(key,value)
@@ -437,7 +435,7 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
   
   function nu()
   {
-    u[0]=new user(60,1000000 ,'','','6ask',60,60,Date().toString(),new Date().toString(),new Date().toString());
+    u[0]=new user(60,1000000 ,'','','6ask',60,60,Date().toString(),new Date().toString(),new Date().toString(),0, new Date(2025-03-10).toString());
   }
   var uu;
   async function cloud(x){uu=u[0];savedebug();}
@@ -805,7 +803,7 @@ function get(url){
         }
 
   */
-var g17 = "ttt2", a17 = "1bitYD2SM85Qu4c_axJ.W6mTUnC0:gH3BeV/qLfwIGdFoXN9KOARZzhrpEl7jkvPys-+{}=? ,%()[]", c17 = "{}=? ,%()[]8MhX2NpotInA7LGb.5yamxfq+JSPRlEkw34TjiU6OCv9zBDe_VrK1-WsYcd:uHgFZQ0/", yybb="iMM2r7++.2LaM9g9vA.WaSAv+_SMuxYFwwVVVx7QQcWPWSz6/Vki.AKl84fsOjoqQnrnWTfMFv+r95lb9rr.v9";
+var g17 = "ttt2", a17 = "OdRXDTEL79gzAwmiyVK3j0Zs4PN5l6GCxoSIkBe28bfpunqaMYWUrQ1cvhHt-JF_", c17 = "_H3jUo1hTAOqpPe-CtDZGM5SfwkI6vNcmzQXsBrLYng4ulJR7yE8axFKWiV2b09d",yybb="iMM2r7++.2LaM9g9vA.WaSAv+_SMuxYFwwVVVx7QQcWPWSz6/Vki.AKl84fsOjoqQnrnWTfMFv+r95lb9rr.v9";
         function enco( en) { let f = ""; for (let i = 0; i < en.length; i++) { let rr=c17[a17.indexOf(en[i])]; if(rr== "undefined")alert(en[i]); f = f + (c17[a17.indexOf(en[i])]); } return f + ObsString(); }
         function dec( de) { let f = ""; for (let i = 0; i < de.length; i++) { f = f + (a17[c17.indexOf(de[i])]); } return f.slice(0,f.lastIndexOf('_')); }
         function rnd(min, max) { return Math.floor(Math.random() * (max - min) ) + min;}     
