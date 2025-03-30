@@ -61,8 +61,8 @@ async function txt(){
       
        if(sec==86000) {startValue=0;   uu.autofarm +=86000;}
       
-         document.getElementById('auto').innerHTML ='Bot coins : '+uu.autofarm;
-             document.getElementById('tc').innerHTML ="Task Coins : "+uu.TaskCoins;
+         document.getElementById('auto').innerHTML ='Bot $Moviz : '+uu.autofarm;
+             document.getElementById('tc').innerHTML ="Task $Moviz : "+uu.TaskCoins;
                           
          // document.getElementById('ic').innerHTML =fname[0];
      document.getElementById('nm').innerHTML ="Hi, "+fname;
@@ -141,7 +141,7 @@ function shareMovie(e)
 {
   let Index=0,tit="";
  for(let i=0;i<lis.length;i++){ if(lis[i].Hid ==e.name){ Index=i;tit=lis[i].Tit; break; }   }
- let param= "https://t.me/share/url?url="+uu.refId+ "_"+fl+"_"+ movIndex+"_"+Index+"&text=You've got to watch or download this amazing movie ( "+tit+" ) and start earning MCoins today.";
+ let param= "https://t.me/share/url?url="+uu.refId+ "_"+fl+"_"+ movIndex+"_"+Index+"&text=You've got to watch or download this amazing movie ( "+tit+" ) and start earning $Moviz today.";
   
   Telegram.WebApp.openTelegramLink(param);
   if(uu.vidshare.length < 5)
@@ -157,7 +157,7 @@ function shareMovie(e)
 }
 
 function showmovie(e)
-{
+{l
      movieUrl=e.id; TaskId="";
       if(e.id.includes("://hd"))    
   { moviePage= "https://hdmania2.net/showmovie.php?id=" +e.name;   
@@ -166,7 +166,7 @@ function showmovie(e)
     else  moviePage= "https://mp4mania1.net/showmovie.php?id=" +e.name;   
                    
      TaskToHandle= 1;    
-     let msg='Watch or download the movie directly at the cost of 300,000 coins or visit the movie web page at zero cost. ';
+     let msg='Watch or download the movie directly at the cost of 300,000 $Moviz or visit the movie web page at zero cost. ';
           let b1='Watch or dowload directly';
     let b2 ='Visit movie page';          
     let height= '80%';
@@ -177,7 +177,7 @@ function showmovie(e)
 function showinvite(e)
 {
           TaskToHandle= 5;TaskId="";
-          msg='Get unlimited coins inviting as many frens as you can. Each invite earns you 100,000 coins per new user. You can copy your referral link below.';
+          msg='Get unlimited $Moviz inviting as many frens as you can. Each invite earns you 100,000 $Moviz per new user. You can copy your referral link below.';
     document.getElementById('bt1').innerHTML ='Copy referal link to clipboard';
     document.getElementById('bt2').innerHTML ='Share referral link';          
     document.getElementById('pop').innerHTML =msg;
@@ -188,8 +188,8 @@ function showinvite(e)
 function ShowAd(e)
 {
      TaskToHandle= 2;TaskId="";
-    msg="Watch ads to get 100,000 coins per ad view. If you don't have our MC app installed already, you will have to download and install it first which will give you access to download our game and earn 2,000,000 coins for first time installation of the game after you watch your first ad.";
-  document.getElementById('bt1').innerHTML ='Watch ads to earn MCoins';
+    msg="Watch ads to get 100,000 $Moviz per ad view. If you don't have our MC app installed already, you will have to download and install it first which will give you access to download our game and earn 2,000,000 $Moviz for first time installation of the game after you watch your first ad.";
+  document.getElementById('bt1').innerHTML ='Watch ads to earn $Moviz';
     document.getElementById('bt2').innerHTML ='Download MC app';
   document.getElementById('pop').innerHTML =msg;
   ppp.style.height= '90%';     
@@ -200,7 +200,7 @@ function ShowAd(e)
 function Showapp(e)
 {
      TaskToHandle= 3;TaskId=e.id;
-    msg="Download Movie Coin Android app to earn 100,000 coins each time you watch an ad.";
+    msg="Download Moviz Android app to earn 100,000 $Moviz each time you watch an ad.";
           document.getElementById('bt1').innerHTML ='Download app now';
     document.getElementById('bt2').innerHTML ='May be later';          
     document.getElementById('pop').innerHTML =msg;          
@@ -212,7 +212,7 @@ function Showapp(e)
 function Showtg(e)
 {
      TaskToHandle= 4;TaskId=e.id;
-    msg="Join our Telegram group to earn 100,000 coins. ";
+    msg="Join our Telegram group to earn 100,000 $Moviz. ";
           document.getElementById('bt1').innerHTML ='Join our Telegram group now';
     document.getElementById('bt2').innerHTML ='May be later';          
     document.getElementById('pop').innerHTML =msg;          
@@ -223,7 +223,7 @@ function Showtg(e)
 function Showtc(e)
 {
      TaskToHandle= 6;TaskId=e.id;
-    msg="Subscribe to our Telegram channel to earn 200,000 coins.";
+    msg="Subscribe to our Telegram channel to earn 200,000 $Moviz.";
     document.getElementById('bt1').innerHTML ='Subscribe to channel now';
     document.getElementById('bt2').innerHTML ='May be later';          
     document.getElementById('pop').innerHTML =msg;          
@@ -234,7 +234,7 @@ function Showtc(e)
 function Showyt(e)
 {
      TaskToHandle= 7;TaskId=e.id;
-    msg="Watch a Youtube video to earn 300,000 coins.";
+    msg="Watch a Youtube video to earn 300,000 $Moviz.";
     document.getElementById('bt1').innerHTML ='Watch video now';
     document.getElementById('bt2').innerHTML ='May be later';          
     document.getElementById('pop').innerHTML =msg;          
@@ -250,7 +250,7 @@ function Showyt(e)
              uu.TaskCoins-=300000; 
             Telegram.WebApp.openLink(v  ,{try_browser:'chrome'});
               savedebug();
-            }else{ showAlert("Not enough TaskCoins. Watch ad or carryout some other tasks and try again." );}
+            }else{ showAlert("Not enough Task $Moviz. Watch ad or carryout some other tasks and try again." );}
              
 }
 var link2open;
@@ -264,7 +264,7 @@ function openApp(browser)
              uu.TaskCoins-=200000; 
            // Telegram.WebApp.openLink(v  ,{try_browser:'chrome'});
               savedebug();
-            }else{ showAlert("Not enough TaskCoins. Watch ad or carryout some other tasks and try again." ); return;}
+            }else{ showAlert("Not enough Task $Moviz. Watch ad or carryout some other tasks and try again." ); return;}
      
   }
   if(browser==0){ Telegram.WebApp.openLink(link2open,{try_instant_view:false});}
@@ -300,7 +300,7 @@ function HandleTask(e)
           }   
   else if(TaskToHandle==4)
           { 
-               Telegram.WebApp.openTelegramLink('https://t.me/channelLink');
+               Telegram.WebApp.openTelegramLink('https://t.me/movizcoin');
             return;
           }
   else if(TaskToHandle==5)
@@ -314,7 +314,7 @@ function HandleTask(e)
     else if(TaskToHandle==6)
             { 
       
-         Telegram.WebApp.openTelegramLink('https://t.me/+DCN-okIeLEtkZjlk');
+         Telegram.WebApp.openTelegramLink('https://t.me/+iSvUer8wnL84NmM0');
               return;
             }
             else if(TaskToHandle==7)
@@ -350,7 +350,7 @@ function HandleTask(e)
         else if(TaskToHandle==5)
           { 
             
-            Telegram.WebApp.openTelegramLink('https://t.me/share/url?url='+uu.refId+'&text=You are invited to join MCoin today.');
+            Telegram.WebApp.openTelegramLink('https://t.me/share/url?url='+uu.refId+'&text=You are invited to join Moviz today.');
             return;
           }      
   else 
@@ -449,7 +449,7 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
                                       //for (let i=0;i<keys.length;i++)save(keys[i],"z");
                             } else {
                         
-                       if(value.length<5){save=true; value= JSON.stringify(u[0]); showAlert("Welcome! You've been awarded 1,000,000 coins as a welcome bonus." ); }   
+                       if(value.length<5){save=true; value= JSON.stringify(u[0]); showAlert("Welcome! You've been awarded 1,000,000 $Moviz as a welcome bonus." ); }   
     uu=JSON.parse(value);
     uu.signUpdt =new Date(uu.signUpdt);
     uu.activedt =new Date(uu.activedt);
@@ -458,7 +458,7 @@ Telegram.WebApp.CloudStorage.setItem('data2', saver, function(err, saved) {
                          for(let prop in uu)
                               { 
                       if(uu[prop].toString().length >0){ }     
-                      else if(prop.toString()=="Task Coins"){ uu[prop]=0;}
+                      else if(prop.toString()=="TaskCoins"){ uu[prop]=0;}
                       else if(prop.toString()=="refId"){ /*uu[prop]=getrefcode();*/}
                       else if(prop.toString()=="ref"){/*uu[prop]="noref";*/}
                       else if(prop.toString()=="ask1"){ /*uu[prop]="nil";*/}
@@ -501,9 +501,9 @@ async function getQuery(isref=false)
            {
              
               Award(p2*100000) ;
-             if(p1.includes(  "ytvid"))showAlert("You've earned "+(p2*100000)+ "MCoins for watching a video. " );else showAlert("You've earned "+(p2*100000)+ "MCoins for watching ads." );
+             if(p1.includes(  "ytvid"))showAlert("You've earned "+(p2*100000)+ "$Moviz for watching a video. " );else showAlert("You've earned "+(p2*100000)+ "$Moviz for watching ads." );
               if(uu.yts<100 ){Award( 2000000);
-                  uu.yts=2000000; showAlert("Congratulations! You have been awarded 2,000,000 coins for installing our app.");}            
+                  uu.yts=2000000; showAlert("Congratulations! You have been awarded 2,000,000 $Moviz for installing our app.");}            
              
            } else  showAlert("To get rewarded for a task, you need to start it from the task section. ");                             
           }
@@ -524,7 +524,7 @@ async function getQuery(isref=false)
      p1.style.display= "none";
      p2.style.display= "none";
      p3.style.display= "none";
-      Award( 2000000);
+      
       fl=z[2];//f3;  
       let url=url2+"List"+fl+".json";
     getJSON(url).then(data => {
@@ -562,7 +562,7 @@ function getrefcode()
     {
    n=n+ en[id2[i]];
     }
-         return 'http://t.me/MCoin2025Bot/MCoin?startapp=reference_' + n;
+         return 'http://t.me/movizcoin_bot/moviz?startapp=reference_' + n;
 }
 
   
@@ -624,13 +624,13 @@ function showAlert(message) {
 {
   document.getElementById("p2").innerHTML="";
   
-  tsk('F','Frens Invite','Invite frens to earn unlimited MCoins','showinvite');
+  tsk('F','Frens Invite','Invite frens to earn unlimited $Moviz','showinvite');
   tsk('A','Android App',' Download our app','Showapp');
-  tsk('G','TG Group ','Join our TG group to earn 100,000 coins','Showtg');
-  tsk('C','TG Channel','Subscribe to Telegram channel to earn coins','Showtc');
-  tsk('M','Mobile ads view','View ads to earn MCoins ','ShowAd');
-  tsk('Y','YouTube Vids','Earn 300,000 coins per YT video watched','Showyt');
-  tsk('V','Video Share','Earn 500,000 coins for video share','vsharein4');
+  tsk('G','TG Group ','Join our TG group to earn 100,000 $Moviz','Showtg');
+  tsk('C','TG Channel','Subscribe to Telegram channel to earn $Moviz','Showtc');
+  tsk('M','Mobile ads view','View ads to earn $Moviz ','ShowAd');
+  tsk('Y','YouTube Vids','Earn 300,000 $Moviz per YT video watched','Showyt');
+  tsk('V','Video Share','Earn 500,000 $Moviz for video share','vsharein4');
   
 }
 
