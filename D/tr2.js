@@ -149,11 +149,12 @@ function shareMovie(e)
     uu.vidshare=new Date().toString();
     uu.TaskCoins += 500000; savedebug();
   }
-  else if(new Date(uu.vidshare).getTime()- new Date().getTime() >86000000)
+  else
+  { let d=new Date(uu.vidshare);let now=new Date(); if(d.getTime()- now.getTime() < 86000000)
   { uu.vidshare=new Date().toString();
     uu.TaskCoins += 500000; savedebug();alert(uu.vidshare);
   }
-            
+  }    
 }
 
 function showmovie(e)
