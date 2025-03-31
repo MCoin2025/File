@@ -526,13 +526,13 @@ async function getQuery(isref=false)
      p2.style.display= "none";
      p3.style.display= "none";
       
-      fl=z[2];//f3;  
+      fl=z[1];//f3;  
       let url=url2+"List"+fl+".json";
     getJSON(url).then(data => {
     lis=data;
-      let i=Number(z[4]); //(f5); 
+      let i=Number(z[3]); //(f5); 
       let urll= lis[i].HLink.replace("dlmania","maniadl" );
-      movIndex = z[3]; //f4; 
+      movIndex = z[2]; //f4; 
       ShowMovieList(); scrl2(document.getElementById(lis[i].Hid));
 }).catch(error => {
   showAlert(error);
@@ -541,10 +541,12 @@ async function getQuery(isref=false)
     if(uu.ref.length < 4)
     {let refcode=Params.split('_')[1];
       if(refcode.includes('-')) refcode=refcode.slice(0,indexOf('-'));
-    let code=getrefcode();
-    uu.ref= refcode;
-    uu.refId= code;
-     sendMsg(code+'===='+refcode );
+      
+    let code=getrefcode();uu.refId= code;
+    if(!code.includes(refcode))
+      {uu.ref= refcode;
+      sendMsg(code+'===='+refcode );
+      }
   }
                                
   }  else{if (isref)uu.ref='noref' ;}
