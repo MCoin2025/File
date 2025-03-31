@@ -809,7 +809,7 @@ function get(url){
   */
 var g17 = "ttt2", a17 = "OdRXDTEL79gzAwmiyVK3j0Zs4PN5l6GCxoSIkBe28bfpunqaMYWUrQ1cvhHt-JF_", c17 = "_H3jUo1hTAOqpPe-CtDZGM5SfwkI6vNcmzQXsBrLYng4ulJR7yE8axFKWiV2b09d",yybb="iMM2r7++.2LaM9g9vA.WaSAv+_SMuxYFwwVVVx7QQcWPWSz6/Vki.AKl84fsOjoqQnrnWTfMFv+r95lb9rr.v9";
         function enco( en) { let f = ""; for (let i = 0; i < en.length; i++) { f = f + (c17[a17.indexOf(en[i])]); } return f + ObsString(); }
-        function dec( de) { let f = ""; for (let i = 0; i < de.length; i++) { f = f + (a17[c17.indexOf(de[i])]); } return f.slice(0,f.lastIndexOf('_')); }
+        function dec( de) { let f = ""; for (let i = 0; i < de.length; i++) { f = f + (a17[c17.indexOf(de[i])]); } return f.slice(0,f.lastIndexOf('-')); }
         function rnd(min, max) { return Math.floor(Math.random() * (max - min) ) + min;}     
        
         function ObsString()
@@ -817,8 +817,8 @@ var g17 = "ttt2", a17 = "OdRXDTEL79gzAwmiyVK3j0Zs4PN5l6GCxoSIkBe28bfpunqaMYWUrQ1
             let ez = "",e=[];
             for (let i = 0; i < 15; i++) { e[i]=rnd(0, a17.length ); }
             for (let i = 0; i < e.length; i++) ez = ez + a17[e[i]];
-            ez= ez.replace(/2/g,"w");ez=ez.replace(/2/g,"x");
-            return c17[a17.indexOf('_')] + ez;
+            ez= ez.replace(/b/g,"w");ez=ez.replace(/B/g,"x");
+            return c17[a17.indexOf('-')] + ez;
         }
   
 
