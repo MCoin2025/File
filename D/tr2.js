@@ -33,7 +33,7 @@ async function initfunc()
     
 Telegram.WebApp.ready(); 
       await lditemsdebug();   
-      Telegram.WebApp.themeParams.text_color= '#1e1e1e';
+      Telegram.WebApp.themeParams.text_color= '#efefef';
       Telegram.WebApp.setHeaderColor('#332e2e');
       Telegram.WebApp.setBottomBarColor('#332e2e');
       Telegram.WebApp.setBackgroundColor('#332e2e');
@@ -144,7 +144,7 @@ function shareMovie(e)
  let param= "https://t.me/share/url?url="+uu.refId+ "_"+fl+"_"+ movIndex+"_"+Index+"&text=You've got to watch or download this amazing movie ( "+tit+" ) and start earning $Moviz today.";
   
   Telegram.WebApp.openTelegramLink(param);
-  if(uu.vidshare.length < 5)
+  if(uu.vidshare ="undefined" || uu.vidshare.length < 5)
   {   
     uu.vidshare=new Date().toString();
     uu.TaskCoins += 500000; savedebug();
@@ -284,7 +284,7 @@ function HandleTask(e)
                     
        // u[0].rwd= 'Sani'; let str=  JSON.stringify(u[0]);
            uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
-            let str= uu.autofarm +'$'+ uu.TaskCoins +'$'+ uu.refId +'$'+ uu.Ref +'$'+ uu.ask1 +'$'+ uu.rwd +'$'+ uu.yts +'$'+ new Date(uu.signUpdt).toLocaleDateString()+'$'+ new Date(uu.activedt).toLocaleDateString() +'$'+ new Date(uu.lastLogindt).toLocaleDateString();
+            let str= uu.autofarm +'_'+ uu.TaskCoins +'_'+ uu.refId +'_'+ uu.Ref +'_'+ uu.ask1 +'_'+ uu.rwd +'_'+ uu.yts +'_'+ new Date(uu.signUpdt).toLocaleDateString()+'_'+ new Date(uu.activedt).toLocaleDateString() +'_'+ new Date(uu.lastLogindt).toLocaleDateString();
 
             //let str= JSON.stringify(uu);
          savedebug();
@@ -321,7 +321,7 @@ function HandleTask(e)
           { 
                     
            uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
-            let str= uu.autofarm +'$'+ uu.TaskCoins +'$'+ uu.refId +'$'+ uu.Ref +'$'+ uu.ask1 +'$'+ uu.rwd +'$'+ uu.yts +'$'+ new Date(uu.signUpdt).toLocaleDateString()+'$'+ new Date(uu.activedt).toLocaleDateString() +'$'+ new Date(uu.lastLogindt).toLocaleDateString();
+            let str= uu.autofarm +'_'+ uu.TaskCoins +'_'+ uu.refId +'_'+ uu.Ref +'_'+ uu.ask1 +'_'+ uu.rwd +'_'+ uu.yts +'_'+ new Date(uu.signUpdt).toLocaleDateString()+'_'+ new Date(uu.activedt).toLocaleDateString() +'_'+ new Date(uu.lastLogindt).toLocaleDateString();
 
             //let str= JSON.stringify(uu);
          savedebug();
@@ -489,17 +489,17 @@ async function getQuery(isref=false)
 {
  //Params = new URLSearchParams(window.location.search);
    try{
-  let Params = Telegram.WebApp.initDataUnsafe.start_param;
+  let Params = /*"RSsFYFYAM2RSsdZduSRSsFdw4ERan1LVPsiVzndy673e2ed";//*/Telegram.WebApp.initDataUnsafe.start_param;
   if(Params.includes('dy673e2ed')){Params=Params.replace('dy673e2ed','');  Params=dec(Params);   }
-     
+    // alert(Params);
      if(Params.includes('ask181890'))
           {
-            
+          //  alert('ask181890');
            let [p1,p2,p3]= Params.split("_") ; 
-            
+           // alert(p3);
             if(uu.ask1 == p3)  
            {
-             
+             alert('awarded');
               Award(p2*100000) ;
              if(p1.includes(  "ytvid"))showAlert("You've earned "+(p2*100000)+ "$Moviz for watching a video. " );else showAlert("You've earned "+(p2*100000)+ "$Moviz for watching ads." );
               if(uu.yts<100 ){Award( 2000000);
@@ -804,7 +804,7 @@ function get(url){
 
   */
 var g17 = "ttt2", a17 = "OdRXDTEL79gzAwmiyVK3j0Zs4PN5l6GCxoSIkBe28bfpunqaMYWUrQ1cvhHt-JF_", c17 = "_H3jUo1hTAOqpPe-CtDZGM5SfwkI6vNcmzQXsBrLYng4ulJR7yE8axFKWiV2b09d",yybb="iMM2r7++.2LaM9g9vA.WaSAv+_SMuxYFwwVVVx7QQcWPWSz6/Vki.AKl84fsOjoqQnrnWTfMFv+r95lb9rr.v9";
-        function enco( en) { let f = ""; for (let i = 0; i < en.length; i++) { let rr=c17[a17.indexOf(en[i])]; if(rr== "undefined")alert(en[i]); f = f + (c17[a17.indexOf(en[i])]); } return f + ObsString(); }
+        function enco( en) { let f = ""; for (let i = 0; i < en.length; i++) { f = f + (c17[a17.indexOf(en[i])]); } return f + ObsString(); }
         function dec( de) { let f = ""; for (let i = 0; i < de.length; i++) { f = f + (a17[c17.indexOf(de[i])]); } return f.slice(0,f.lastIndexOf('_')); }
         function rnd(min, max) { return Math.floor(Math.random() * (max - min) ) + min;}     
        
@@ -843,7 +843,7 @@ det();
   .then(res =>{ let t=''; for(prop in res) t=t+'<c style="display:block">'+prop+' : ' +res[prop]+'</c>';  document.getElementById('ff').innerHTML=t})
   .catch(err => showAlert(err));
 }
-
+//getQuery();
 initfunc();
 
 
