@@ -141,7 +141,7 @@ function shareMovie(e)
 {
   let Index=0,tit="";
  for(let i=0;i<lis.length;i++){ if(lis[i].Hid ==e.name){ Index=i;tit=lis[i].Tit; break; }   }
- let param= "https://t.me/share/url?url="+uu.refId+ "_"+fl+"_"+ movIndex+"_"+Index+"&text=You've got to watch or download this amazing movie ( "+tit+" ) and start earning $Moviz today.";
+ let param= "https://t.me/share/url?url="+uu.refId+ "-"+fl+"-"+ movIndex+"-"+Index+"&text=You've got to watch or download this amazing movie ( "+tit+" ) and start earning $Moviz today.";
   
   Telegram.WebApp.openTelegramLink(param);
   if(uu.vidshare ="undefined" || uu.vidshare.length < 5)
@@ -284,7 +284,7 @@ function HandleTask(e)
                     
        // u[0].rwd= 'Sani'; let str=  JSON.stringify(u[0]);
            uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
-            let str= uu.autofarm +'_'+ uu.TaskCoins +'_'+ uu.refId +'_'+ uu.Ref +'_'+ uu.ask1 +'_'+ uu.rwd +'_'+ uu.yts +'_'+ new Date(uu.signUpdt).toLocaleDateString()+'_'+ new Date(uu.activedt).toLocaleDateString() +'_'+ new Date(uu.lastLogindt).toLocaleDateString();
+            let str= uu.autofarm +'-'+ uu.TaskCoins +'-'+ uu.refId +'-'+ uu.Ref +'-'+ uu.ask1 +'-'+ uu.rwd +'-'+ uu.yts +'-'+ new Date(uu.signUpdt).toLocaleDateString()+'-'+ new Date(uu.activedt).toLocaleDateString() +'-'+ new Date(uu.lastLogindt).toLocaleDateString();
 
             //let str= JSON.stringify(uu);
          savedebug();
@@ -321,7 +321,7 @@ function HandleTask(e)
           { 
                     
            uu.rwd= fname;uu.ask1= new Date().getTime().toString(); 
-            let str= uu.autofarm +'_'+ uu.TaskCoins +'_'+ uu.refId +'_'+ uu.Ref +'_'+ uu.ask1 +'_'+ uu.rwd +'_'+ uu.yts +'_'+ new Date(uu.signUpdt).toLocaleDateString()+'_'+ new Date(uu.activedt).toLocaleDateString() +'_'+ new Date(uu.lastLogindt).toLocaleDateString();
+            let str= uu.autofarm +'-'+ uu.TaskCoins +'-'+ uu.refId +'-'+ uu.Ref +'-'+ uu.ask1 +'-'+ uu.rwd +'-'+ uu.yts +'-'+ new Date(uu.signUpdt).toLocaleDateString()+'-'+ new Date(uu.activedt).toLocaleDateString() +'-'+ new Date(uu.lastLogindt).toLocaleDateString();
 
             //let str= JSON.stringify(uu);
          savedebug();
@@ -495,7 +495,7 @@ async function getQuery(isref=false)
      if(Params.includes('ask181890'))
           {
           //  alert('ask181890');
-           let [p1,p2,p3]= Params.split("_") ; 
+           let [p1,p2,p3]= Params.split("-") ; 
            // alert(p3);
             if(uu.ask1 == p3)  
            {
@@ -509,14 +509,14 @@ async function getQuery(isref=false)
           }
      /*else if(Params.includes('yts'))
   {
-    let [p1,p2]= Params.split("_");
+    let [p1,p2]= Params.split("-");
     
     //if(vidCodes.includes(p2))Award( 200000);
   }*/
         else if(Params.includes('reference' ))
   {
-    //let [f1,f2,f3,f4,f5]=Params.split('_');
-     let z=Params.split('_');
+    //let [f1,f2,f3,f4,f5]=Params.split('-');
+     let z=Params.split('-');
      
      if(z.length>3)
     {
@@ -538,7 +538,8 @@ async function getQuery(isref=false)
 });
      }
     if(uu.ref.length < 4)
-    {let refcode=Params.split('_')[2];
+    {let refcode=Params.split('_')[1];
+      if(refcode.includes('-')) refcode=refcode.slice(0,indexOf('-'));
     let code=getrefcode();
     uu.ref= refcode;
     uu.refId= code;
