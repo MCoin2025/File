@@ -143,16 +143,16 @@ function shareMovie(e)
  for(let i=0;i<lis.length;i++){ if(lis[i].Hid ==e.name){ Index=i;tit=lis[i].Tit; break; }   }
  let param= "https://t.me/share/url?url="+uu.refId+ "-"+fl+"-"+ movIndex+"-"+Index+"&text=You've got to watch or download this amazing movie ( "+tit+" ) and start earning $Moviz today.";
   
-  //Telegram.WebApp.openTelegramLink(param);
+  Telegram.WebApp.openTelegramLink(param);
   if(  uu.vidshare.length < 5)
   {   
     uu.vidshare=new Date().toString();
     uu.TaskCoins += 500000; savedebug();
   }
   else
-  { let d=new Date(uu.vidshare);let now=new Date(); if(d.getTime()- now.getTime() < 86000000)
+  { let d=new Date(uu.vidshare);let now=new Date(); if(d.getTime()- now.getTime() > 86000000)
   { uu.vidshare=new Date().toString();
-    uu.TaskCoins += 500000; savedebug();alert(uu.vidshare);
+    uu.TaskCoins += 500000; savedebug();
   }
   }    
 }
@@ -497,7 +497,7 @@ async function getQuery(isref=false)
           {
           //  alert('ask181890');
            let [p1,p2,p3]= Params.split("-") ; 
-           // alert(p3);
+           alert(p3);
             if(uu.ask1 == p3)  
            {
              alert('awarded');
