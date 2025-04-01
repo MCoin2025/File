@@ -301,6 +301,7 @@ function HandleTask(e)
           }   
   else if(TaskToHandle==4)
           { 
+            if(uu.others=='undefined')uu.others=='k6';
             if(!uu.others.includes('chch')){ uu.others=uu.others+ 'chch'; uu.TaskCoins +=100000;savedebug();}
              Telegram.WebApp.openTelegramLink('https://t.me/movizcoin');
               return;
@@ -315,6 +316,7 @@ function HandleTask(e)
           }
     else if(TaskToHandle==6)
             { 
+             if(uu.others=='undefined')uu.others=='k6';
       if(!uu.others.includes('grp')){uu.others=uu.others+ 'grp'; uu.TaskCoins +=100000;savedebug();}
             
          Telegram.WebApp.openTelegramLink('https://t.me/+iSvUer8wnL84NmM0');
